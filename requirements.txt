@@ -5,3 +5,4 @@ chromadb
 tiktoken
 python-dotenv
 python-magic
+langchain_community

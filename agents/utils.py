@@ -17,6 +17,7 @@ def get_api_key():
             help="You can get your API key from https://platform.openai.com/account/api-keys",
             value=st.session_state.api_key or ""
         )
+     
         
         if api_key:
             st.session_state.api_key = api_key
@@ -27,6 +28,10 @@ def get_api_key():
             st.warning("Please enter your API key to continue")
     
     return st.session_state.api_key
+
+# Add this at the top of your script, after the imports
+if 'user_input' not in st.session_state:
+    st.session_state.user_input = ''
 
 def init_llm(temp=0.7):
     """Initialize LLM with user-provided API key"""
